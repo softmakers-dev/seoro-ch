@@ -1,0 +1,7 @@
+bootJar { enabled = false}
+jar {enabled = true}
+
+dependencies {
+    implementation project(path: ":seoro-domain", configuration: 'default')
+    implementation project(path: ":seoro-store", configuration: 'default')
+}

@@ -1,0 +1,6 @@
+rootProject.name = 'seoro-ch'
+include 'seoro-boot'
+include 'seoro-domain'
+include 'seoro-api'
+include 'seoro-store'
+
