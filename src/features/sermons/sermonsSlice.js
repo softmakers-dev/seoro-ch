@@ -8,24 +8,6 @@ function nextSermonId(sermons) {
     return maxId + 1
 }
 
-// export default function sermonsReducer(state= initialState, action) {
-//
-//     switch (action.type) {
-//         case 'sermons/sermonAdded': {
-//             return [
-//                 ...state,
-//                 {
-//                     id: nextSermonId(state),
-//                     link: action.payload.link,
-//                     date: action.payload.date
-//                 }
-//             ]
-//         }
-//         default:
-//             return state
-//     }
-// }
-
 export const sermonsSlice = createSlice({
 
     name: 'sermons',
