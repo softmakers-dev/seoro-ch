@@ -1,0 +1,21 @@
+spring:
+  profiles:
+    active: local
+  application:
+    name: seoro-ch
+  datasource:
+    url: jdbc:mariadb://seoro.cdqvnfvk2kzc.us-east-1.rds.amazonaws.com:3306
+    driverClassName: org.mariadb.jdbc.Driver
+    username: admin
+    password: Rlawlgns1!
+  jpa:
+    database-platform: org.hibernate.dialect.MariaDB103Dialect
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+swagger:
+  basePackage: 'com.softmakers.seoro-ch'
+  title: 'Seoro-ch service'
+  description: 'softmakers Seoro-ch service'
