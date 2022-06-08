@@ -4,9 +4,10 @@ bootJar {
 dependencies {
     implementation project(path: ":seoro-api", configuration: 'default')
 
-    implementation 'org.springframework.boot:spring-boot-starter'
-    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter' exclude module: 'spring-boot-starter-logging'
+    implementation 'org.springframework.boot:spring-boot-starter-security' exclude module: 'spring-boot-starter-logging'
     implementation group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
     implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
     implementation group: 'org.springframework.security', name: 'spring-security-web', version: '5.5.2'
 }
+

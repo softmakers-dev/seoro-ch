@@ -15,8 +15,8 @@ public class UserLogic implements UserApi {
     }
 
     @Override
-    public User findUser(String email, String password) {
+    public User findUser(String loginId, String name) {
 
-        return this.store.retrieveUser(email, password);
+        return this.store.retrieveUser(loginId, name);
     }
 }

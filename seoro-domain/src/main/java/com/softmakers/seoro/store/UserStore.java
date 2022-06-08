@@ -4,5 +4,5 @@ import com.softmakers.seoro.entity.User;
 
 public interface UserStore {
 
-    public User retrieveUser(String email, String password);
+    public User retrieveUser(String loginId, String name);
 }

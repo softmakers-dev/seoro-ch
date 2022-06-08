@@ -2,6 +2,7 @@ package com.softmakers.seoro.entity;
 
 import com.google.gson.Gson;
 import lombok.Data;
+import org.springframework.stereotype.Component;
 
 import java.sql.Timestamp;
 

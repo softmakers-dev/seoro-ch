@@ -1,9 +1,10 @@
 package com.softmakers.seoro.api;
 
 import com.softmakers.seoro.entity.User;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.softmakers.seoro.entity.request.ReqUser;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 @RestController
 @RequestMapping(value = "/user")
@@ -15,8 +16,12 @@ public class UserApiImpl /*implements UserApiImpl*/ {
         this.api = api;
     }
 
-//    @GetMapping(value = "/{email}/{password}")
-//    public User findUser() {
-//        return this.api.findUser();
-//    }
+    @PostMapping(value = "/info")
+    @ResponseBody
+    public User findUser(@RequestBody ReqUser paramMap) {
+
+        String loginId = paramMap.getLoginId();
+        String name = paramMap.getName();
+        return this.api.findUser(loginId, name);
+    }
 }

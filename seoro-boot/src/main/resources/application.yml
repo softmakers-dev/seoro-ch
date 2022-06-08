@@ -4,12 +4,12 @@ spring:
   application:
     name: seoro-ch
   datasource:
-    url: jdbc:mariadb://seoro.cdqvnfvk2kzc.us-east-1.rds.amazonaws.com:3306
+    url: jdbc:mariadb://seoro.cdqvnfvk2kzc.us-east-1.rds.amazonaws.com:3306/seoro
     driverClassName: org.mariadb.jdbc.Driver
     username: admin
     password: Rlawlgns1!
   jpa:
-    database-platform: org.hibernate.dialect.MariaDB103Dialect
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     show-sql: true
     properties:
       hibernate:
