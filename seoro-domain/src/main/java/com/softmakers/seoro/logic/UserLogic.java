@@ -15,8 +15,15 @@ public class UserLogic implements UserApi {
     }
 
     @Override
-    public User findUser(String loginId, String name) {
+    public User findUser(String loginId, String name) throws NoSuchFieldException{
 
-        return this.store.retrieveUser(loginId, name);
+        User result = null;
+        try {
+            result = this.store.retrieveUser(loginId, name);
+        } catch (NoSuchFieldException nse) {
+            throw nse;
+        }
+
+        return result;
     }
 }

@@ -4,5 +4,5 @@ import com.softmakers.seoro.entity.User;
 
 public interface UserApi {
 
-    public User findUser(String loginId, String name);
+    public User findUser(String loginId, String name) throws NoSuchFieldException;
 }

@@ -17,12 +17,14 @@ public class UserStoreImpl implements UserStore{
     }
 
     @Override
-    public User retrieveUser(String loginId, String name) {
+    public User retrieveUser(String loginId, String name) throws NoSuchFieldException {
 
         Optional<UserData> oUser = this.repository.findByLoginId(loginId);
         User user = null;
         if (oUser.isPresent()) {
             user = oUser.get().toDomain();
+        } else {
+            throw new NoSuchFieldException();
         }
 
         return name.equals(user.getName()) ? user : null;

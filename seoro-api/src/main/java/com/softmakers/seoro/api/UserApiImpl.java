@@ -4,6 +4,7 @@ import com.softmakers.seoro.entity.User;
 import com.softmakers.seoro.entity.request.ReqUser;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.Map;
 
 @RestController
@@ -18,10 +19,26 @@ public class UserApiImpl /*implements UserApiImpl*/ {
 
     @PostMapping(value = "/info")
     @ResponseBody
-    public User findUser(@RequestBody ReqUser paramMap) {
+    public User findUser(@RequestBody ReqUser paramMap) throws NoSuchFieldException {
 
         String loginId = paramMap.getLoginId();
         String name = paramMap.getName();
-        return this.api.findUser(loginId, name);
+        User result = null;
+
+        try {
+            result = this.api.findUser(loginId, name);
+        } catch (NoSuchFieldException nse) {
+            throw nse;
+        }
+
+        return result;
+    }
+
+    @ExceptionHandler(NoSuchFieldException.class)
+    public Map noSuchFieldExe(Exception e) {
+
+        Map errMessage = new HashMap();
+        errMessage.put("errMessage", "No data found with the login id & name");
+        return errMessage;
     }
 }
